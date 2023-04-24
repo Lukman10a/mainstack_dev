@@ -11,6 +11,19 @@ import file from "../../assets/icons/file_present.svg";
 import alarm from "../../assets/icons/alarm.svg";
 
 const LeftSideBar = () => {
+  // const [isMobile, setIsMobile] = useState(false);
+
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setIsMobile(window.innerWidth < 640);
+  //   }
+
+  //   window.addEventListener("resize", handleResize);
+  //   handleResize();
+
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
   return (
     <div className=" border-r-2">
       <img src={mainstack} alt="" className="my-7 px-7" />
@@ -75,6 +88,24 @@ const LeftSideBar = () => {
           <p className="text-[#4D5760]">Blessing Daniels</p>
         </div>
       </div>
+
+      {/* {isMobile && (
+        <button
+          onClick={() => setIsMobile(!isMobile)}
+          className="text-white focus:outline-none focus:text-white"
+        >
+          <svg
+            className="h-6 w-6 fill-current"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="heroicon-ui"
+              d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
+            />
+          </svg>
+        </button>
+      )} */}
     </div>
   );
 };
