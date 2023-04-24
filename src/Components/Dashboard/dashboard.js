@@ -4,7 +4,7 @@ import MainContent from "./maincontent";
 
 const DashBoard = () => {
   return (
-    <div className="flex h-full">
+    <div className="flex h-full ">
       <LeftSideBar />
       <MainContent />
     </div>

@@ -5,7 +5,7 @@ import PageViews from "./pageviews";
 
 const MainContent = () => {
   return (
-    <div className="flex-1">
+    <div className="flex-1 max-h-screen overflow-y-auto">
       <h2 className="text-xl font-bold px-7 py-4 mb-4">Dashboard</h2>
       <main className="px-7">
         <div>
@@ -18,7 +18,7 @@ const MainContent = () => {
           </div>
         </div>
         <div className="my-6">
-          <ul className="flex gap-3 text-sm">
+          <ul className="flex gap-3 text-sm flex-wrap">
             <li className="p-3 border rounded-full">1 Day</li>
             <li className="p-3 border rounded-full">3 Days</li>
             <li className="p-3 border rounded-full">30 Days</li>
@@ -35,8 +35,9 @@ const MainContent = () => {
           </div>
           <p className="text-sm text-[#31373D]">All time</p>
           <p className="text-5xl my-7 font-bold">500</p>
-
-          <PageViews />
+          <div>
+            <PageViews />
+          </div>
         </section>
         <ButtomContent />
       </main>

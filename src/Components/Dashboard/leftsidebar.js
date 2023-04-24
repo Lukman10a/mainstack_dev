@@ -70,9 +70,9 @@ const LeftSideBar = () => {
           </li>
         </ul>
 
-        <div>
-          <img src="" alt="" />
-          <p>Blessing Daniels</p>
+        <div className="flex gap-2 px-2 items-center mt-5">
+          <div className="w-10 h-10 rounded-full bg-black"></div>
+          <p className="text-[#4D5760]">Blessing Daniels</p>
         </div>
       </div>
     </div>
