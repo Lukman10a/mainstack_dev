@@ -66,7 +66,19 @@ const TopLocationChart = () => {
       },
     ],
   };
-  if (isLoading) return "Loading...";
+  if (isLoading)
+    return (
+      <div className="border rounded-md p-6 text-lg flex-1">
+        <button
+          type="button"
+          className="bg-indigo-500 rounded-lg p-3 text-white flex gap-2 items-center"
+          disabled
+        >
+          <span className="animate-pulse rounded-xl bg-white shadow-md w-5 h-5 inline-block"></span>
+          <span>Loading...</span>
+        </button>
+      </div>
+    );
 
   if (error) return "An error has occurred: " + error.message;
 

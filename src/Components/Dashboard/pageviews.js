@@ -26,20 +26,9 @@ ChartJS.register(
 );
 
 export const options = {
-  maintainAspectRatio: false,
   responsive: true,
-
-  // scales: {
-  //   x: {
-  //     type: "time",
-  //     time: {
-  //       unit: "day",
-  //       displayFormats: {
-  //         day: "MMM D, YYYY",
-  //       },
-  //     },
-  //   },
-  // },
+  aspectRatio: 1,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: "top",
@@ -74,7 +63,7 @@ const PageViews = () => {
     labels: graphValue.dates,
     datasets: [
       {
-        label: "Page Views",
+        label: "",
         data: graphValue.views,
         borderColor: "rgba(255, 84, 3, .8)",
         backgroundColor: "rgba(255, 84, 3,.5)",
@@ -82,9 +71,19 @@ const PageViews = () => {
     ],
   };
 
-  if (isLoading) return "Loading...";
+  if (isLoading)
+    return (
+      <button
+        type="button"
+        className="bg-indigo-500 rounded-lg p-3 text-white flex gap-2 items-center"
+        disabled
+      >
+        <span className="animate-pulse rounded-xl bg-white shadow-md w-5 h-5 inline-block"></span>
+        <span>Processing...</span>
+      </button>
+    );
 
-  if (error) return "An error has occurred: " + error.message;
+  if (error) return <h4>{`An error has occurred:  + ${error.message}`}</h4>;
 
   return (
     <div className="w-full min-h-60">
