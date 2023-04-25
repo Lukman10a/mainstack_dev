@@ -33,8 +33,6 @@ const MainContent = () => {
             <h2 className="text-lg font-bold">Page Views</h2>
             <img src={info} alt="" />
           </div>
-          <p className="text-sm text-[#31373D]">All time</p>
-          <p className="text-5xl my-7 font-bold">500</p>
           <div>
             <PageViews />
           </div>

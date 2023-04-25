@@ -38,7 +38,7 @@ export const options = {
 
 const PageViews = () => {
   let data;
-  const [graphValue, setGraphValue] = useState({});
+  const [graphValue, setGraphValue] = useState({ dates: [], views: [] });
   const {
     isLoading,
     error,
@@ -86,8 +86,15 @@ const PageViews = () => {
   if (error) return <h4>{`An error has occurred:  + ${error.message}`}</h4>;
 
   return (
-    <div className="w-full min-h-60">
-      <Line options={options} data={data} />
+    <div>
+      <p className="text-sm text-[#31373D]">All time</p>
+      <p className="text-5xl my-7 font-bold">
+        {graphValue.views.length !== 0 &&
+          graphValue.views.reduce((x, y) => x + y)}
+      </p>
+      <div className="w-full min-h-60">
+        <Line options={options} data={data} />
+      </div>
     </div>
   );
 };
