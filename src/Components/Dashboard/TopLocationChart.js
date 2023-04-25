@@ -35,7 +35,7 @@ const TopLocationChart = () => {
 
   useEffect(() => {
     if (apiData) {
-      console.log(apiData);
+      // console.log(apiData);
       const country = apiData.top_locations.map((location) => location.country);
       const count = apiData.top_locations.map((location) => location.count);
       setGraphValue({ country, count });
@@ -76,8 +76,8 @@ const TopLocationChart = () => {
         <h4 className="font-bold">Top Locations</h4>
         <p className="text-[#FF5403] text-sm">View full reports</p>
       </div>
-      <div className="flex gap-4">
-        <ul className="space-y-5 text-sm">
+      <div className="flex gap-4  text-sm flex-col md:flex-row">
+        <ul className="md:space-y-5 md:flex-col flex flex-wrap gap-2">
           {graphValue &&
             graphValue?.country?.map((country, index) => (
               <li key={country} className="flex gap-2 capitalize">
@@ -88,7 +88,7 @@ const TopLocationChart = () => {
               </li>
             ))}
         </ul>
-        <div className="h-48 self-center">
+        <div className="max-h-48 self-center">
           <Doughnut data={data} options={options} />
         </div>
       </div>

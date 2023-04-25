@@ -25,7 +25,7 @@ const LeftSideBar = () => {
   // }, []);
 
   return (
-    <div className=" border-r-2">
+    <div className="md:block hidden border-r-2">
       <img src={mainstack} alt="" className="my-7 px-7" />
 
       <ul className="space-y-4">

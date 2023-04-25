@@ -11,7 +11,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sohne: ["Test Söhne", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

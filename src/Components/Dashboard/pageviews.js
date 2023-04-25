@@ -26,7 +26,9 @@ ChartJS.register(
 );
 
 export const options = {
+  maintainAspectRatio: false,
   responsive: true,
+
   // scales: {
   //   x: {
   //     type: "time",
@@ -61,7 +63,7 @@ const PageViews = () => {
   useEffect(() => {
     if (apiData) {
       const dates = Object.keys(apiData.graph_data.views).map((date) =>
-        moment(date).format("MMM D, YYYY")
+        moment(date).format("MMM D, YY")
       );
       const views = Object.values(apiData.graph_data.views);
       setGraphValue({ dates, views });
@@ -85,7 +87,7 @@ const PageViews = () => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <div>
+    <div className="w-full min-h-60">
       <Line options={options} data={data} />
     </div>
   );
